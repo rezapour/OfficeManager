@@ -15,6 +15,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.rezapour.officemanager.DataState
+import com.rezapour.officemanager.base.components.ErrorComponent
 import com.rezapour.officemanager.model.FactItem
 import com.rezapour.officemanager.model.RoomItem
 import com.rezapour.officemanager.ui.theme.OfficeManagerTheme
@@ -31,7 +32,13 @@ fun RoomListScreen(
 ) {
     val uiState = viewModel.uiState.collectAsState().value
 
-    Scaffold(topBar = { TopBar(filterState = false, onFilterClicked = {}) }) { paddingValues ->
+    Scaffold(topBar = {
+        TopBar(
+            filterState = false,
+            onFilterClicked = onNavigateToFilterScreen
+        )
+    }) { paddingValues ->
+
         Content(Modifier.padding(paddingValues), uiState)
     }
 }
@@ -39,7 +46,7 @@ fun RoomListScreen(
 @Composable
 fun Content(modifier: Modifier = Modifier, uiState: DataState<List<RoomItem>>) {
     when (uiState) {
-        is DataState.Error -> Log.d("RezaAPP", "${uiState.e.message}")
+        is DataState.Error -> ErrorComponent(messageId = uiState.messageId)
         DataState.Loading -> Loading(modifier)
         is DataState.Success -> RoomList(modifier = modifier, roomList = uiState.data)
     }

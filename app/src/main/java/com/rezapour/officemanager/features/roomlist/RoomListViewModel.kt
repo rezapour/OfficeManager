@@ -1,6 +1,7 @@
 package com.rezapour.officemanager.features.roomlist
 
 import android.util.Log
+import androidx.compose.runtime.collectAsState
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rezapour.officemanager.DataState
@@ -33,7 +34,7 @@ class RoomListViewModel @Inject constructor(
         viewModelScope.launch {
             roomUseCase.stateFlow.collect { dataState ->
                 when (dataState) {
-                    is DataState.Error -> _uiState.value = DataState.Error(dataState.e)
+                    is DataState.Error -> _uiState.value = DataState.Error(dataState.messageId)
                     DataState.Loading -> _uiState.value = DataState.Loading
                     is DataState.Success -> {
                         _uiState.value =
