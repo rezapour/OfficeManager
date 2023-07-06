@@ -7,9 +7,9 @@ import com.rezapour.officemanager.data.network.model.RoomNetworkEntity
 import com.rezapour.officemanager.data.network.retrofit.ApiService
 
 class ApiProviderImpl(private val apiService: ApiService) : ApiProvider {
-    override suspend fun getRooms(): List<RoomNetworkEntity> {
+    override suspend fun getRooms(department: String, type: String): List<RoomNetworkEntity> {
         try {
-            val assetResponse = apiService.getRooms()
+            val assetResponse = apiService.getRooms(department, type)
             if (assetResponse.isSuccessful)
                 if (assetResponse.isResponseValid())
                     return assetResponse.body()!!

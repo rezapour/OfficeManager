@@ -1,4 +1,4 @@
-package com.rezapour.officemanager.di.network
+package com.rezapour.officemanager.data.network.di
 
 import com.rezapour.officemanager.data.network.ApiProvider
 import com.rezapour.officemanager.data.network.impl.ApiProviderImpl
