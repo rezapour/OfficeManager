@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="topbar_action_icon">25dp</dimen>
+    <dimen name="topbar_text_title_size">20sp</dimen>
+    <dimen name="shadow_elevation">8dp</dimen>
+</resources>
