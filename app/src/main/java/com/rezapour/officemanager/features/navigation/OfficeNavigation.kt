@@ -20,6 +20,6 @@ fun NavGraphBuilder.officeNavigation(navController: NavController) {
     }
 
     composable(Destinations.FilterScreen.route) {
-        FilterScreen()
+        FilterScreen(onBackClicked = {navController.popBackStack()})
     }
 }
