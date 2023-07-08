@@ -11,10 +11,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.rezapour.officemanager.DataState
+import com.rezapour.officemanager.R
 import com.rezapour.officemanager.base.components.ErrorComponent
 import com.rezapour.officemanager.model.FactItem
 import com.rezapour.officemanager.model.RoomItem
@@ -31,36 +33,59 @@ fun RoomListScreen(
 
 ) {
     val uiState = viewModel.uiState.collectAsState().value
-
+    val filterState = viewModel.filterState.collectAsState().value
     Scaffold(topBar = {
         TopBar(
-            filterState = false,
+            filterState = filterState,
             onFilterClicked = onNavigateToFilterScreen
         )
     }) { paddingValues ->
 
-        Content(Modifier.padding(paddingValues), uiState)
+        Content(
+            Modifier.padding(paddingValues),
+            uiState,
+            onMoreClick = { onNavigateToDetailScreen() })
     }
 }
 
 @Composable
-fun Content(modifier: Modifier = Modifier, uiState: DataState<List<RoomItem>>) {
+fun Content(
+    modifier: Modifier = Modifier,
+    uiState: DataState<List<RoomItem>>,
+    onMoreClick: (RoomItem) -> Unit
+) {
     when (uiState) {
-        is DataState.Error -> ErrorComponent(messageId = uiState.messageId)
+        is DataState.Error -> ErrorComponent(
+            modifier = modifier.padding(
+                start = dimensionResource(id = R.dimen.room_detail_padding),
+                end = dimensionResource(
+                    id = R.dimen.room_detail_padding
+                )
+            ), messageId = uiState.messageId
+        )
+
         DataState.Loading -> Loading(modifier)
-        is DataState.Success -> RoomList(modifier = modifier, roomList = uiState.data)
+        is DataState.Success -> RoomList(
+            modifier = modifier,
+            roomList = uiState.data,
+            onMoreClick = onMoreClick
+        )
     }
 }
 
 @Composable
-fun RoomList(modifier: Modifier = Modifier, roomList: List<RoomItem>) {
+fun RoomList(
+    modifier: Modifier = Modifier,
+    roomList: List<RoomItem>,
+    onMoreClick: (RoomItem) -> Unit
+) {
     LazyColumn(
         modifier = modifier.padding(8.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         items(items = roomList) { roomItem ->
-            RoomItem(roomItem = roomItem, onMoreClicked = {})
+            RoomItem(roomItem = roomItem, onMoreClicked = onMoreClick)
         }
     }
 }
@@ -70,7 +95,8 @@ fun RoomList(modifier: Modifier = Modifier, roomList: List<RoomItem>) {
 fun RoomListPreview() {
     OfficeManagerTheme() {
         RoomList(
-            roomList = getRoomList()
+            roomList = getRoomList(),
+            onMoreClick = {}
         )
     }
 }

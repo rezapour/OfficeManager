@@ -46,6 +46,7 @@ fun FilterScreen(filterViewModel: FilterViewModel = hiltViewModel(), onBackClick
                 onClearFilter = {
                     departments.forEach { it.selected = false }
                     types.forEach { it.selected = false }
+                    filterViewModel.clearFilter()
                 })
         }) { padding ->
         ContentSection(

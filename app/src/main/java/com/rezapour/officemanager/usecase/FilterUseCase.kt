@@ -19,7 +19,7 @@ class FilterUseCase @Inject constructor() {
     val filterState: StateFlow<FilterStatus> = _filterState
 
     private val _filterIsActive = MutableStateFlow(false)
-    private val filterIsActive: StateFlow<Boolean> = _filterIsActive
+    val filterIsActive: StateFlow<Boolean> = _filterIsActive
 
     fun updateFilter(filter: FilterStatus) {
         _filterState.value = filter

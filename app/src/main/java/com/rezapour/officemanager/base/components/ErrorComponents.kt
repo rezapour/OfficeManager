@@ -14,6 +14,7 @@ import androidx.compose.ui.res.stringResource
 fun ErrorComponent(modifier: Modifier = Modifier, @StringRes messageId: Int) {
     Box(modifier = modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Text(
+            modifier=modifier,
             text = stringResource(id = messageId),
             style = MaterialTheme.typography.titleLarge,
             color = MaterialTheme.colorScheme.tertiary

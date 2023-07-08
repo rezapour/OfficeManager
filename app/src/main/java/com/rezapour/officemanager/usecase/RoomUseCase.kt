@@ -10,7 +10,9 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.catch
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class RoomUseCase @Inject constructor(private val roomRepository: RoomRepository) {
 
     private val _stateFlow: MutableStateFlow<DataState<List<Room>>> =

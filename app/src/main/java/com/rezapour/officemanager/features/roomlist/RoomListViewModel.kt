@@ -30,6 +30,9 @@ class RoomListViewModel @Inject constructor(
 
     override val uiState: StateFlow<DataState<List<RoomItem>>> = _uiState
 
+    val filterState: StateFlow<Boolean> = filterUseCase.filterIsActive
+
+
     init {
         viewModelScope.launch {
             roomUseCase.stateFlow.collect { dataState ->

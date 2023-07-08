@@ -91,7 +91,7 @@ fun RoomItem(modifier: Modifier = Modifier, roomItem: RoomItem, onMoreClicked: (
                         text = "See More ->",
                         style = MaterialTheme.typography.titleMedium,
                         color = MaterialTheme.colorScheme.secondary,
-                        modifier = Modifier.clickable { }
+                        modifier = Modifier.clickable { onMoreClicked(roomItem) }
                     )
                 }
             }

@@ -6,4 +6,6 @@
     <dimen name="selection_text_padding">6dp</dimen>
     <dimen name="selection_space_by">8dp</dimen>
     <dimen name="top_bar_padding">4dp</dimen>
+    <dimen name="room_detain_paceby">8dp</dimen>
+    <dimen name="room_detail_padding">16dp</dimen>
 </resources>

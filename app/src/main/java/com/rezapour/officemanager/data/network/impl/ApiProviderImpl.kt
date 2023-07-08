@@ -14,7 +14,7 @@ class ApiProviderImpl(private val apiService: ApiService) : ApiProvider {
                 if (assetResponse.isResponseValid())
                     return assetResponse.body()!!
                 else
-                    throw DataProviderException(ExceptionMapper.toServerError())
+                    throw DataProviderException(ExceptionMapper.toRespondIsEmpty())
             else
                 throw DataProviderException(ExceptionMapper.toApiCallErrorMessage(assetResponse.code()))
         } catch (e: Exception) {

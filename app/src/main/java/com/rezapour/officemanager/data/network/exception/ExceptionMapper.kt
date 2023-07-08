@@ -14,4 +14,6 @@ object ExceptionMapper {
     fun toInternetConnectionError() = R.string.error_internet_connection
 
     fun toServerError() = R.string.error_server_error
+
+    fun toRespondIsEmpty()=R.string.error_filter_empty
 }
