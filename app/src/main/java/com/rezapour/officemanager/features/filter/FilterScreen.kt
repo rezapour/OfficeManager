@@ -66,7 +66,8 @@ fun FilterScreen(filterViewModel: FilterViewModel = hiltViewModel(), onBackClick
                 val department =
                     departments.firstOrNull() { department -> department.selected }?.option ?: ""
                 val type = types.firstOrNull { type -> type.selected }?.option ?: ""
-                filterViewModel.updateFilter(FilterStatus(department, type))
+                if (department != "" || type != "")
+                    filterViewModel.updateFilter(FilterStatus(department, type))
                 onBackClicked()
             })
     }
