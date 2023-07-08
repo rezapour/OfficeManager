@@ -7,8 +7,10 @@ import androidx.lifecycle.viewModelScope
 import com.rezapour.officemanager.DataState
 import com.rezapour.officemanager.base.dispatcher.DispatcherProvider
 import com.rezapour.officemanager.mapper.UiItemMapper
+import com.rezapour.officemanager.model.FactItem
 import com.rezapour.officemanager.model.RoomItem
 import com.rezapour.officemanager.usecase.FilterUseCase
+import com.rezapour.officemanager.usecase.RoomFactUseCase
 import com.rezapour.officemanager.usecase.RoomUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -22,7 +24,8 @@ class RoomListViewModel @Inject constructor(
     private val roomUseCase: RoomUseCase,
     private val filterUseCase: FilterUseCase,
     private val uiItemMapper: UiItemMapper,
-    private val dispatcher: DispatcherProvider
+    private val dispatcher: DispatcherProvider,
+    private val factUseCase: RoomFactUseCase
 ) : ViewModel(), RoomListContract {
 
     private val _uiState: MutableStateFlow<DataState<List<RoomItem>>> =
@@ -61,5 +64,9 @@ class RoomListViewModel @Inject constructor(
 
     override fun onRefresh() {
         loadData()
+    }
+
+    fun onMoreClicked(factItem: FactItem) {
+        factUseCase.upDateFact(uiItemMapper.factItemToFact(factItem))
     }
 }

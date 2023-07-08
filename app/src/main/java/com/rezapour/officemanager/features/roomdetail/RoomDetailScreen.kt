@@ -12,11 +12,13 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.rezapour.officemanager.R
 import com.rezapour.officemanager.model.FactItem
 import com.rezapour.officemanager.base.components.ImageLoader
@@ -24,11 +26,15 @@ import com.rezapour.officemanager.ui.theme.OfficeManagerTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DetailScreen(onBackClicked: () -> Unit) {
+fun DetailScreen(
+    roomDetailViewModel: RoomDetailViewModel = hiltViewModel(),
+    onBackClicked: () -> Unit
+) {
+    val fact = roomDetailViewModel.factState.collectAsState().value
     Scaffold(topBar = {
         TopBarDetail(onBackClicked = onBackClicked, title = R.string.room_detail_title)
     }) { paddingValues ->
-        ContentItem(modifier = Modifier.padding(paddingValues), factItem = getFactItem())
+        ContentItem(modifier = Modifier.padding(paddingValues), factItem = fact)
     }
 }
 

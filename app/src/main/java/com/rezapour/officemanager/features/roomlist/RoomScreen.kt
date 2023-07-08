@@ -1,6 +1,5 @@
 package com.rezapour.officemanager.features.roomlist
 
-import android.util.Log
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
@@ -18,10 +17,10 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.rezapour.officemanager.DataState
 import com.rezapour.officemanager.R
 import com.rezapour.officemanager.base.components.ErrorComponent
+import com.rezapour.officemanager.base.components.Loading
 import com.rezapour.officemanager.model.FactItem
 import com.rezapour.officemanager.model.RoomItem
 import com.rezapour.officemanager.ui.theme.OfficeManagerTheme
-import com.rezapour.officemanager.base.components.Loading
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -44,7 +43,10 @@ fun RoomListScreen(
         Content(
             Modifier.padding(paddingValues),
             uiState,
-            onMoreClick = { onNavigateToDetailScreen() })
+            onMoreClick = { roomItem ->
+                viewModel.onMoreClicked(roomItem.lovooFact!!)
+                onNavigateToDetailScreen()
+            })
     }
 }
 

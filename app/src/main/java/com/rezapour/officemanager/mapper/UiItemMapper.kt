@@ -25,9 +25,18 @@ class UiItemMapper @Inject constructor() {
         }
 
 
-    private fun factToFactItem(fact: Fact) =
+    fun factToFactItem(fact: Fact) =
         with(fact) {
             FactItem(
+                images = images,
+                text = text,
+                title = title
+            )
+        }
+
+    fun factItemToFact(fact: FactItem) =
+        with(fact) {
+            Fact(
                 images = images,
                 text = text,
                 title = title
