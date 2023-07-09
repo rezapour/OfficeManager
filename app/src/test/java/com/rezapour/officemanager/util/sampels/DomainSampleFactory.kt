@@ -1,6 +1,7 @@
 package com.rezapour.officemanager.util.sampels
 
 import com.rezapour.officemanager.domain.model.Fact
+import com.rezapour.officemanager.domain.model.FilterStatus
 import com.rezapour.officemanager.domain.model.Room
 
 object DomainSampleFactory {
@@ -35,4 +36,9 @@ object DomainSampleFactory {
         text = "Making our users happy is the main challenge for our support team",
         title = "Customer care"
     )
+
+
+    fun getFilterStatus() = FilterStatus("engineering", "team")
+
+    fun clearFilterStatus() = FilterStatus("", "")
 }
