@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.sp
 import com.rezapour.officemanager.R
 import com.rezapour.officemanager.model.FactItem
 import com.rezapour.officemanager.model.RoomItem
-import com.rezapour.officemanager.ui.theme.OfficeManagerTheme
+import com.rezapour.officemanager.base.ui.theme.OfficeManagerTheme
 import com.rezapour.officemanager.utils.capitalize
 
 @Composable

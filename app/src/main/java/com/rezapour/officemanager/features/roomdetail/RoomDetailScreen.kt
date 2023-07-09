@@ -22,7 +22,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import com.rezapour.officemanager.R
 import com.rezapour.officemanager.model.FactItem
 import com.rezapour.officemanager.base.components.ImageLoader
-import com.rezapour.officemanager.ui.theme.OfficeManagerTheme
+import com.rezapour.officemanager.base.ui.theme.OfficeManagerTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

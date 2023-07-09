@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.rezapour.officemanager.R
 import com.rezapour.officemanager.base.components.fontDimensionResource
-import com.rezapour.officemanager.ui.theme.OfficeManagerTheme
+import com.rezapour.officemanager.base.ui.theme.OfficeManagerTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

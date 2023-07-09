@@ -23,7 +23,7 @@ object Version {
     const val core_testing="2.2.0"
     const val jUnit_androidTest="1.1.5"
     const val espresso_core="3.5.1"
-    const val compose_bom="2022.10.00"
+    const val compose_bom="2023.05.01"
     const val core_ktx="1.10.1"
     const val activity_component="1.7.2"
     const val viewmodel_compose="2.6.1"

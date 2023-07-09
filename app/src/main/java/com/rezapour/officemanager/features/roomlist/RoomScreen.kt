@@ -4,10 +4,10 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
@@ -18,12 +18,12 @@ import com.rezapour.officemanager.DataState
 import com.rezapour.officemanager.R
 import com.rezapour.officemanager.base.components.ErrorComponent
 import com.rezapour.officemanager.base.components.Loading
+import com.rezapour.officemanager.base.ui.theme.OfficeManagerTheme
 import com.rezapour.officemanager.model.FactItem
 import com.rezapour.officemanager.model.RoomItem
-import com.rezapour.officemanager.ui.theme.OfficeManagerTheme
+import kotlinx.coroutines.CoroutineScope
 
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RoomListScreen(
     viewModel: RoomListViewModel = hiltViewModel(),
@@ -33,6 +33,10 @@ fun RoomListScreen(
 ) {
     val uiState = viewModel.uiState.collectAsState().value
     val filterState = viewModel.filterState.collectAsState().value
+
+    val coroutineScope: CoroutineScope = rememberCoroutineScope()
+
+
     Scaffold(topBar = {
         TopBar(
             filterState = filterState,
@@ -89,6 +93,8 @@ fun RoomList(
         items(items = roomList) { roomItem ->
             RoomItem(roomItem = roomItem, onMoreClicked = onMoreClick)
         }
+
+
     }
 }
 

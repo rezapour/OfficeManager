@@ -8,7 +8,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.rezapour.officemanager.base.navigation.AppNavigation
-import com.rezapour.officemanager.ui.theme.OfficeManagerTheme
+import com.rezapour.officemanager.base.ui.theme.OfficeManagerTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
