@@ -1,10 +1,10 @@
-package com.rezapour.officemanager.usecase
+package com.rezapour.officemanager.domain.usecase
 
-import com.rezapour.officemanager.constant.Department
-import com.rezapour.officemanager.constant.Type
-import com.rezapour.officemanager.model.Filter
-import com.rezapour.officemanager.model.FilterOption
-import com.rezapour.officemanager.model.FilterStatus
+import com.rezapour.officemanager.base.constant.Department
+import com.rezapour.officemanager.base.constant.Type
+import com.rezapour.officemanager.domain.model.Filter
+import com.rezapour.officemanager.domain.model.FilterOption
+import com.rezapour.officemanager.domain.model.FilterStatus
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject

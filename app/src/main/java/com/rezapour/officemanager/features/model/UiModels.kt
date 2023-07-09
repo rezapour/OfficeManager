@@ -1,4 +1,4 @@
-package com.rezapour.officemanager.model
+package com.rezapour.officemanager.features.model
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf

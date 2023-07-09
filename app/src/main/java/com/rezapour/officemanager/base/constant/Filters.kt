@@ -1,4 +1,4 @@
-package com.rezapour.officemanager.constant
+package com.rezapour.officemanager.base.constant
 
 enum class Department(val value: String) {
     ENGINEERING("engineering"),

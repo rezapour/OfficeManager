@@ -1,4 +1,4 @@
-package com.rezapour.officemanager
+package com.rezapour.officemanager.base
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

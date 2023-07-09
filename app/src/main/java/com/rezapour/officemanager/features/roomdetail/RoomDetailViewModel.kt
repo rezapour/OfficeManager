@@ -3,9 +3,9 @@ package com.rezapour.officemanager.features.roomdetail
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rezapour.officemanager.base.dispatcher.DispatcherProvider
-import com.rezapour.officemanager.mapper.UiItemMapper
-import com.rezapour.officemanager.model.FactItem
-import com.rezapour.officemanager.usecase.RoomFactUseCase
+import com.rezapour.officemanager.features.mapper.UiItemMapper
+import com.rezapour.officemanager.features.model.FactItem
+import com.rezapour.officemanager.domain.usecase.RoomFactUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

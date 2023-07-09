@@ -1,12 +1,10 @@
 package com.rezapour.officemanager.features.filter
 
 import androidx.lifecycle.ViewModel
-import com.rezapour.officemanager.DataState
-import com.rezapour.officemanager.mapper.UiItemMapper
-import com.rezapour.officemanager.model.FilterOption
-import com.rezapour.officemanager.model.FilterStatus
-import com.rezapour.officemanager.model.FilterViewOptions
-import com.rezapour.officemanager.usecase.FilterUseCase
+import com.rezapour.officemanager.domain.model.FilterStatus
+import com.rezapour.officemanager.features.mapper.UiItemMapper
+import com.rezapour.officemanager.features.model.FilterViewOptions
+import com.rezapour.officemanager.domain.usecase.FilterUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

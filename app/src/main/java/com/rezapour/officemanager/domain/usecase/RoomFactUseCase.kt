@@ -1,7 +1,6 @@
-package com.rezapour.officemanager.usecase
+package com.rezapour.officemanager.domain.usecase
 
-import com.rezapour.officemanager.model.Fact
-import com.rezapour.officemanager.model.Room
+import com.rezapour.officemanager.domain.model.Fact
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject

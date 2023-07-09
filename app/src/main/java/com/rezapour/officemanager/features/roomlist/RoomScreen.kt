@@ -14,13 +14,13 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.rezapour.officemanager.DataState
+import com.rezapour.officemanager.utils.DataState
 import com.rezapour.officemanager.R
 import com.rezapour.officemanager.base.components.ErrorComponent
 import com.rezapour.officemanager.base.components.Loading
 import com.rezapour.officemanager.base.ui.theme.OfficeManagerTheme
-import com.rezapour.officemanager.model.FactItem
-import com.rezapour.officemanager.model.RoomItem
+import com.rezapour.officemanager.features.model.FactItem
+import com.rezapour.officemanager.features.model.RoomItem
 import kotlinx.coroutines.CoroutineScope
 
 

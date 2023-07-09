@@ -1,7 +1,7 @@
 package com.rezapour.officemanager.features.roomlist
 
-import com.rezapour.officemanager.DataState
-import com.rezapour.officemanager.model.RoomItem
+import com.rezapour.officemanager.utils.DataState
+import com.rezapour.officemanager.features.model.RoomItem
 import kotlinx.coroutines.flow.StateFlow
 //TODO Add interface to app
 interface RoomListContract {

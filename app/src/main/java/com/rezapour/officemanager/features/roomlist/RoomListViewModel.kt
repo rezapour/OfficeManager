@@ -1,19 +1,16 @@
 package com.rezapour.officemanager.features.roomlist
 
-import android.util.Log
-import androidx.compose.runtime.collectAsState
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.rezapour.officemanager.DataState
+import com.rezapour.officemanager.utils.DataState
 import com.rezapour.officemanager.base.dispatcher.DispatcherProvider
-import com.rezapour.officemanager.mapper.UiItemMapper
-import com.rezapour.officemanager.model.FactItem
-import com.rezapour.officemanager.model.RoomItem
-import com.rezapour.officemanager.usecase.FilterUseCase
-import com.rezapour.officemanager.usecase.RoomFactUseCase
-import com.rezapour.officemanager.usecase.RoomUseCase
+import com.rezapour.officemanager.features.mapper.UiItemMapper
+import com.rezapour.officemanager.features.model.FactItem
+import com.rezapour.officemanager.features.model.RoomItem
+import com.rezapour.officemanager.domain.usecase.FilterUseCase
+import com.rezapour.officemanager.domain.usecase.RoomFactUseCase
+import com.rezapour.officemanager.domain.usecase.RoomUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch

@@ -2,7 +2,7 @@ package com.rezapour.officemanager.data.repository.di
 
 import com.rezapour.officemanager.data.network.ApiProvider
 import com.rezapour.officemanager.data.network.mapper.NetworkMapper
-import com.rezapour.officemanager.data.repository.RoomRepository
+import com.rezapour.officemanager.domain.repository.RoomRepository
 import com.rezapour.officemanager.data.repository.impl.RoomRepositoryImpl
 import dagger.Module
 import dagger.Provides

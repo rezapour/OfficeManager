@@ -1,14 +1,11 @@
-package com.rezapour.officemanager.usecase
+package com.rezapour.officemanager.domain.usecase
 
-import android.util.Log
-import com.rezapour.officemanager.DataState
+import com.rezapour.officemanager.utils.DataState
 import com.rezapour.officemanager.data.exception.DataProviderException
-import com.rezapour.officemanager.data.repository.RoomRepository
-import com.rezapour.officemanager.model.Room
-import kotlinx.coroutines.flow.Flow
+import com.rezapour.officemanager.domain.repository.RoomRepository
+import com.rezapour.officemanager.domain.model.Room
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.catch
 import javax.inject.Inject
 import javax.inject.Singleton
 

@@ -27,9 +27,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.rezapour.officemanager.R
-import com.rezapour.officemanager.model.FilterStatus
-import com.rezapour.officemanager.model.SelectionOption
+import com.rezapour.officemanager.features.model.SelectionOption
 import com.rezapour.officemanager.base.ui.theme.OfficeManagerTheme
+import com.rezapour.officemanager.domain.model.FilterStatus
 import com.rezapour.officemanager.utils.capitalize
 
 @OptIn(ExperimentalMaterial3Api::class)

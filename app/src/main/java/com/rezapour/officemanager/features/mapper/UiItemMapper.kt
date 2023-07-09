@@ -1,12 +1,11 @@
-package com.rezapour.officemanager.mapper
+package com.rezapour.officemanager.features.mapper
 
-import com.rezapour.officemanager.model.Fact
-import com.rezapour.officemanager.model.FactItem
-import com.rezapour.officemanager.model.Filter
-import com.rezapour.officemanager.model.FilterOption
-import com.rezapour.officemanager.model.Room
-import com.rezapour.officemanager.model.RoomItem
-import com.rezapour.officemanager.model.SelectionOption
+import com.rezapour.officemanager.domain.model.Fact
+import com.rezapour.officemanager.features.model.FactItem
+import com.rezapour.officemanager.domain.model.Filter
+import com.rezapour.officemanager.domain.model.Room
+import com.rezapour.officemanager.features.model.RoomItem
+import com.rezapour.officemanager.features.model.SelectionOption
 import javax.inject.Inject
 
 class UiItemMapper @Inject constructor() {

@@ -20,7 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.rezapour.officemanager.R
-import com.rezapour.officemanager.model.FactItem
+import com.rezapour.officemanager.features.model.FactItem
 import com.rezapour.officemanager.base.components.ImageLoader
 import com.rezapour.officemanager.base.ui.theme.OfficeManagerTheme
 

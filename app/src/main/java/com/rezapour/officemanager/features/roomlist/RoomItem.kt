@@ -22,8 +22,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.rezapour.officemanager.R
-import com.rezapour.officemanager.model.FactItem
-import com.rezapour.officemanager.model.RoomItem
+import com.rezapour.officemanager.features.model.FactItem
+import com.rezapour.officemanager.features.model.RoomItem
 import com.rezapour.officemanager.base.ui.theme.OfficeManagerTheme
 import com.rezapour.officemanager.utils.capitalize
 

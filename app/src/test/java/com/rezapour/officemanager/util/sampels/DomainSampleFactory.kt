@@ -1,7 +1,7 @@
 package com.rezapour.officemanager.util.sampels
 
-import com.rezapour.officemanager.model.Fact
-import com.rezapour.officemanager.model.Room
+import com.rezapour.officemanager.domain.model.Fact
+import com.rezapour.officemanager.domain.model.Room
 
 object DomainSampleFactory {
 

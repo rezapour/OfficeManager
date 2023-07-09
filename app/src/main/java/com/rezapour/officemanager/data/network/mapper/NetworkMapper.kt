@@ -2,8 +2,8 @@ package com.rezapour.officemanager.data.network.mapper
 
 import com.rezapour.officemanager.data.network.model.FactNetworkEntity
 import com.rezapour.officemanager.data.network.model.RoomNetworkEntity
-import com.rezapour.officemanager.model.Fact
-import com.rezapour.officemanager.model.Room
+import com.rezapour.officemanager.domain.model.Fact
+import com.rezapour.officemanager.domain.model.Room
 import javax.inject.Inject
 
 class NetworkMapper @Inject constructor() {

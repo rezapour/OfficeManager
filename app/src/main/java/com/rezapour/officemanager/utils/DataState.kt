@@ -1,4 +1,4 @@
-package com.rezapour.officemanager
+package com.rezapour.officemanager.utils
 
 sealed class DataState<out T> {
     object Loading : DataState<Nothing>()

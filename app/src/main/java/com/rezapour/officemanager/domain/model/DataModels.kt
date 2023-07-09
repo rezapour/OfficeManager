@@ -1,4 +1,4 @@
-package com.rezapour.officemanager.model
+package com.rezapour.officemanager.domain.model
 
 
 data class Room(
