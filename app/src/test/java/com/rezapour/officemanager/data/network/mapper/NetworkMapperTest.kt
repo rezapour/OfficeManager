@@ -16,7 +16,7 @@ class NetworkMapperTest{
     }
 
     @Test
-    fun RoomNetworkEntityToRoomListTest(){
+    fun roomNetworkEntityToRoomListTest(){
         assertThat(mapper.roomNetworkEntityListToRoomList(NetworkSampleFactory.getRoomResponse())).isEqualTo(DomainSampleFactory.getRoomResponse())
     }
 }
