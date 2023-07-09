@@ -5,7 +5,7 @@ import com.rezapour.officemanager.model.Room
 
 object DomainSampleFactory {
 
-    fun getRoomResponse(): List<Room> {
+    fun getRooms(): List<Room> {
         val room1 = Room(
             roomNumber = "4.1-04",
             officeLevel = 4,

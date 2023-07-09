@@ -5,5 +5,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface RoomRepository {
 
-    suspend fun getRooms(department: String, type: String): Flow<List<Room>>
+    suspend fun getRooms(department: String, type: String): List<Room>
 }

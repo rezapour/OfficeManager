@@ -22,14 +22,10 @@ class RoomUseCase @Inject constructor(private val roomRepository: RoomRepository
 
     suspend fun loadData(department: String, type: String) {
         _stateFlow.value = DataState.Loading
-        roomRepository.getRooms(department, type)
-            .catch { e ->
-                _stateFlow.value = DataState.Error((e as DataProviderException).messageId)
-            }
-            .collect { rooms ->
-                _stateFlow.value = DataState.Success(rooms)
-            }
+        try {
+            _stateFlow.value = DataState.Success(roomRepository.getRooms(department, type))
+        } catch (e: DataProviderException) {
+            _stateFlow.value = DataState.Error(e.messageId)
+        }
     }
-
-
 }

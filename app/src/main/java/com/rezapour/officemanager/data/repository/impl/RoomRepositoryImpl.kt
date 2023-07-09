@@ -13,8 +13,8 @@ class RoomRepositoryImpl @Inject constructor(
     private val apiProvider: ApiProvider,
     private val networkMapper: NetworkMapper
 ) : RoomRepository {
-    override suspend fun getRooms(department: String, type: String): Flow<List<Room>> = flow {
-        emit(networkMapper.roomNetworkEntityListToRoomList(apiProvider.getRooms(department, type)))
+    override suspend fun getRooms(department: String, type: String): List<Room> {
+        return networkMapper.roomNetworkEntityListToRoomList(apiProvider.getRooms(department, type))
     }
 
 
