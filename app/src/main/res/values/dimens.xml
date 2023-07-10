@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="topbar_action_icon">25dp</dimen>
+    <dimen name="topbar_text_title_size">20sp</dimen>
+    <dimen name="shadow_elevation">8dp</dimen>
+    <dimen name="selection_text_padding">6dp</dimen>
+    <dimen name="selection_space_by">8dp</dimen>
+    <dimen name="top_bar_padding">4dp</dimen>
+    <dimen name="room_detain_paceby">8dp</dimen>
+    <dimen name="room_detail_padding">16dp</dimen>
+    <dimen name="error_component_padding">16dp</dimen>
+    <dimen name="filter_padding">16dp</dimen>
+    <dimen name="room_item_shadow">2dp</dimen>
+    <dimen name="room_item_padding">8dp</dimen>
+    <dimen name="room_item_spaceby">4dp</dimen>
+    <dimen name="room_item_image_height">150dp</dimen>
+    <dimen name="room_item_padding_top">6dp</dimen>
+    <dimen name="room_item_font_size">16sp</dimen>
+    <dimen name="room_detail_spaceby">4dp</dimen>
+    <dimen name="room_detail_image_size">160dp</dimen>
+    <dimen name="filter_spaceby">16dp</dimen>
+    <dimen name="filter_content_spaceby">24dp</dimen>
+</resources>
