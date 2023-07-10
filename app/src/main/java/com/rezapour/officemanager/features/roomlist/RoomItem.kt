@@ -17,11 +17,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.rezapour.officemanager.R
+import com.rezapour.officemanager.base.components.fontDimensionResource
 import com.rezapour.officemanager.features.model.FactItem
 import com.rezapour.officemanager.features.model.RoomItem
 import com.rezapour.officemanager.base.ui.theme.OfficeManagerTheme
@@ -30,7 +32,10 @@ import com.rezapour.officemanager.utils.capitalize
 @Composable
 fun RoomItem(modifier: Modifier = Modifier, roomItem: RoomItem, onMoreClicked: (RoomItem) -> Unit) {
     Surface(
-        modifier = modifier.shadow(2.dp, shape = MaterialTheme.shapes.small),
+        modifier = modifier.shadow(
+            dimensionResource(id = R.dimen.room_item_shadow),
+            shape = MaterialTheme.shapes.small
+        ),
         shape = MaterialTheme.shapes.small,
         color = MaterialTheme.colorScheme.surface,
     ) {
@@ -39,8 +44,8 @@ fun RoomItem(modifier: Modifier = Modifier, roomItem: RoomItem, onMoreClicked: (
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(8.dp),
-            verticalArrangement = Arrangement.spacedBy(4.dp),
+                .padding(dimensionResource(id = R.dimen.filter_padding)),
+            verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.room_item_spaceby)),
             horizontalAlignment = Alignment.Start,
         ) {
             Image(
@@ -49,31 +54,31 @@ fun RoomItem(modifier: Modifier = Modifier, roomItem: RoomItem, onMoreClicked: (
                 contentScale = ContentScale.FillBounds,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(150.dp)
+                    .height(dimensionResource(id = R.dimen.room_item_image_height))
             )
 
             Text(
                 text = roomItem.name,
                 style = MaterialTheme.typography.labelLarge,
                 color = MaterialTheme.colorScheme.tertiary,
-                fontSize = 16.sp,
-                modifier = Modifier.padding(start = 8.dp)
+                fontSize = fontDimensionResource(id = R.dimen.room_item_font_size),
+                modifier = Modifier.padding(start = dimensionResource(id = R.dimen.room_item_padding))
             )
 
             Text(
                 text = "${roomItem.roomNumber}, ${roomItem.officeLevel}th floor",
                 style = MaterialTheme.typography.labelMedium,
                 color = MaterialTheme.colorScheme.tertiary,
-                modifier = Modifier.padding(start = 8.dp)
+                modifier = Modifier.padding(start = dimensionResource(id = R.dimen.room_item_padding))
             )
 
             Row(
                 modifier = Modifier
-                    .padding(top = 6.dp)
-                    .padding(start = 8.dp)
+                    .padding(top = dimensionResource(id = R.dimen.room_item_padding_top))
+                    .padding(start = dimensionResource(id = R.dimen.room_item_padding))
                     .fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(4.dp),
+                horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.room_item_spaceby)),
             ) {
                 BoxLabel(label = roomItem.department)
                 roomItem.type?.let { BoxLabel(label = it) }
@@ -81,7 +86,12 @@ fun RoomItem(modifier: Modifier = Modifier, roomItem: RoomItem, onMoreClicked: (
             roomItem.lovooFact?.let {
                 Row(
                     modifier = Modifier
-                        .padding(top = 6.dp, end = 8.dp)
+                        .padding(
+                            top = dimensionResource(id = R.dimen.room_item_padding_top),
+                            end = dimensionResource(
+                                id = R.dimen.room_item_padding
+                            )
+                        )
                         .fillMaxWidth(),
                     verticalAlignment = Alignment.CenterVertically,
                 ) {

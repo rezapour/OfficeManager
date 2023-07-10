@@ -10,4 +10,10 @@
     <dimen name="room_detail_padding">16dp</dimen>
     <dimen name="error_component_padding">16dp</dimen>
     <dimen name="filter_padding">16dp</dimen>
+    <dimen name="room_item_shadow">2dp</dimen>
+    <dimen name="room_item_padding">8dp</dimen>
+    <dimen name="room_item_spaceby">4dp</dimen>
+    <dimen name="room_item_image_height">150dp</dimen>
+    <dimen name="room_item_padding_top">6dp</dimen>
+    <dimen name="room_item_font_size">16sp</dimen>
 </resources>
