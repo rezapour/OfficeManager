@@ -25,14 +25,12 @@ class FilterViewModel @Inject constructor(
         getFilters()
     }
 
-    //TODO where get Filters
     private fun getFilters() {
         val filters = filterUseCase.getFilters()
         _filterState.value =
             FilterViewOptions(
                 department = uiItemMapper.filterListToSelectionPotionList(filters.department),
                 type = uiItemMapper.filterListToSelectionPotionList(filters.type)
-
             )
     }
 

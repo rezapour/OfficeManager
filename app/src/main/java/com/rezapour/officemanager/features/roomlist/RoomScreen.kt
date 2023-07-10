@@ -50,6 +50,8 @@ fun RoomListScreen(
             onMoreClick = { roomItem ->
                 viewModel.onMoreClicked(roomItem.lovooFact!!)
                 onNavigateToDetailScreen()
+            }, retry = {
+                viewModel.loadData()
             })
     }
 }
@@ -58,7 +60,8 @@ fun RoomListScreen(
 fun Content(
     modifier: Modifier = Modifier,
     uiState: DataState<List<RoomItem>>,
-    onMoreClick: (RoomItem) -> Unit
+    onMoreClick: (RoomItem) -> Unit,
+    retry: () -> Unit
 ) {
     when (uiState) {
         is DataState.Error -> ErrorComponent(
@@ -67,7 +70,7 @@ fun Content(
                 end = dimensionResource(
                     id = R.dimen.room_detail_padding
                 )
-            ), messageId = uiState.messageId
+            ), messageId = uiState.messageId, retryClicked = retry
         )
 
         DataState.Loading -> Loading(modifier)

@@ -8,4 +8,6 @@
     <dimen name="top_bar_padding">4dp</dimen>
     <dimen name="room_detain_paceby">8dp</dimen>
     <dimen name="room_detail_padding">16dp</dimen>
+    <dimen name="error_component_padding">16dp</dimen>
+    <dimen name="filter_padding">16dp</dimen>
 </resources>

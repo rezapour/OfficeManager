@@ -7,7 +7,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class RoomFactUseCase @Inject constructor() {
+open class RoomFactUseCase @Inject constructor() {
     private val _factState: MutableStateFlow<Fact> = MutableStateFlow(Fact(emptyList(), "", ""))
     val factState: StateFlow<Fact> = _factState
 

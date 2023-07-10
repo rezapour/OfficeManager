@@ -10,10 +10,8 @@ import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Inject
 import javax.inject.Singleton
 
-//TODO do not fier if is the same
-//TODO multiClick fire
 @Singleton
-class FilterUseCase @Inject constructor() {
+open class FilterUseCase @Inject constructor() {
 
     private val _filterState = MutableStateFlow(FilterStatus("", ""))
     val filterState: StateFlow<FilterStatus> = _filterState
@@ -31,7 +29,7 @@ class FilterUseCase @Inject constructor() {
         _filterIsActive.value = false
     }
 
-    fun getFilters(): FilterOption {
+    open fun getFilters(): FilterOption {
         val department = Department.values().map { department ->
             Filter(department.value, department.value == _filterState.value.department)
         }

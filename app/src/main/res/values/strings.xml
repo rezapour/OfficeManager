@@ -5,6 +5,7 @@
     <string name="error_server_error">Failed to connect to server. Please try again.</string>
     <string name="error_default_message">Something went wrong!</string>
     <string name="error_filter_empty">There is no data to show please change your filter.</string>
+    <string name="retry">Retry</string>
     <string name="room_list_titel">Rooms</string>
     <string name="room_detail_title">Room Detail</string>
     <string name="room_filter_title">Filters</string>

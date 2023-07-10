@@ -27,9 +27,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.rezapour.officemanager.R
-import com.rezapour.officemanager.features.model.SelectionOption
 import com.rezapour.officemanager.base.ui.theme.OfficeManagerTheme
 import com.rezapour.officemanager.domain.model.FilterStatus
+import com.rezapour.officemanager.features.model.SelectionOption
 import com.rezapour.officemanager.utils.capitalize
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -83,7 +83,11 @@ fun ContentSection(
     onButtonClicked: () -> Unit
 ) {
     Column(
-        modifier = modifier.padding(start = 16.dp, end = 16.dp, bottom = 16.dp),
+        modifier = modifier.padding(
+            start = dimensionResource(id = R.dimen.filter_padding),
+            end = dimensionResource(id = R.dimen.filter_padding),
+            bottom = dimensionResource(id = R.dimen.filter_padding)
+        ),
         horizontalAlignment = Alignment.Start,
         verticalArrangement = Arrangement.spacedBy(24.dp)
     ) {
@@ -137,7 +141,7 @@ fun SelectionList(
 ) {
     LazyVerticalGrid(
         modifier = modifier,
-        columns = GridCells.Fixed(4),
+        columns = GridCells.Fixed(3),
         horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.selection_space_by)),
         verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.selection_space_by))
     )
