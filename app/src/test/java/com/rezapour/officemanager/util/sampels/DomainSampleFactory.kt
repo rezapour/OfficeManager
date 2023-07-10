@@ -1,6 +1,8 @@
 package com.rezapour.officemanager.util.sampels
 
 import com.rezapour.officemanager.domain.model.Fact
+import com.rezapour.officemanager.domain.model.Filter
+import com.rezapour.officemanager.domain.model.FilterOption
 import com.rezapour.officemanager.domain.model.FilterStatus
 import com.rezapour.officemanager.domain.model.Room
 
@@ -41,4 +43,9 @@ object DomainSampleFactory {
     fun getFilterStatus() = FilterStatus("engineering", "team")
 
     fun clearFilterStatus() = FilterStatus("", "")
+
+    fun getFilterDepartment() = listOf(Filter("engineering", false))
+    fun getFilterType() = listOf(Filter("team", false))
+
+    fun getFilterOption() = FilterOption(getFilterDepartment(), getFilterType())
 }
