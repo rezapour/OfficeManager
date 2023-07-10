@@ -9,5 +9,8 @@
     <string name="room_list_titel">Rooms</string>
     <string name="room_detail_title">Room Detail</string>
     <string name="room_filter_title">Filters</string>
+    <string name="filter_apply">Apply Filter</string>
+    <string name="filter_department">Department</string>
+    <string name="filter_type">Type</string>
 
 </resources>

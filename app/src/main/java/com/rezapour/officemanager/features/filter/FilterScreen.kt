@@ -22,6 +22,7 @@ import androidx.compose.runtime.toMutableStateList
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -89,13 +90,13 @@ fun ContentSection(
             bottom = dimensionResource(id = R.dimen.filter_padding)
         ),
         horizontalAlignment = Alignment.Start,
-        verticalArrangement = Arrangement.spacedBy(24.dp)
+        verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.filter_content_spaceby))
     ) {
-        FilterSection(label = "Department") {
+        FilterSection(label = stringResource(id = R.string.filter_department)) {
             SelectionList(options = department, onOptionClicked = onDepartmentClick)
         }
 
-        FilterSection(label = "Type") {
+        FilterSection(label = stringResource(id = R.string.filter_type)) {
             SelectionList(options = type, onOptionClicked = onTypeClicked)
         }
 
@@ -108,7 +109,7 @@ fun ContentSection(
                 contentColor = MaterialTheme.colorScheme.primary
             )
         ) {
-            Text(text = "Apply Filter")
+            Text(text = stringResource(id = R.string.filter_apply))
         }
     }
 }
@@ -122,7 +123,7 @@ fun FilterSection(
     Column(
         modifier = modifier,
         horizontalAlignment = Alignment.Start,
-        verticalArrangement = Arrangement.spacedBy(16.dp)
+        verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.filter_spaceby))
     ) {
         Text(
             text = label,

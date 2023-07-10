@@ -70,7 +70,7 @@ fun ImageList(modifier: Modifier = Modifier, urls: List<String>) {
     LazyRow(
         modifier = modifier,
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(4.dp)
+        horizontalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.room_detail_spaceby))
     ) {
         items(items = urls) { url ->
             ImageItem(url = url)
@@ -80,7 +80,10 @@ fun ImageList(modifier: Modifier = Modifier, urls: List<String>) {
 
 @Composable
 fun ImageItem(modifier: Modifier = Modifier, url: String) {
-    ImageLoader(imageUrl = url, modifier = modifier.size(160.dp))
+    ImageLoader(
+        imageUrl = url,
+        modifier = modifier.size(dimensionResource(id = R.dimen.room_detail_image_size))
+    )
 }
 
 fun getFactItem() = FactItem(
